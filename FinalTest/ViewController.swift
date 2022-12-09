@@ -18,7 +18,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var button_metric: UIButton!
     @IBOutlet weak var button_imperial: UIButton!
     @IBOutlet weak var button_history: UIButton!
+    
+    let defaults = UserDefaults.standard
+    var arr = [[String:String]]()
     var currentMeasurement:String = "metric"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         currentMeasurement = "metric"
@@ -26,6 +30,9 @@ class ViewController: UIViewController {
         textfield_height.placeholder = "example: 178 centimeters (number only)"
         button_metric.backgroundColor = UIColor.blue
         button_metric.tintColor = UIColor.white
+        if(UserDefaults.standard.object(forKey: "arrayList") == nil){
+            defaults.set(arr,forKey:"arrayList")
+        }
     }
 
     @IBAction func button_metric_pressed(_ sender: UIButton) {
@@ -68,21 +75,51 @@ class ViewController: UIViewController {
         if textfield_weight.text == "" || textfield_height.text == ""{
             return
         }
+        var weight:Double! = 0.0
+        var height:Double! = 0.0
+        var BMI:Double! = 0.0
+        var message:String = ""
+        weight = Double(textfield_weight.text!)
+        height = Double(textfield_height.text!)
         if currentMeasurement == "metric"{
-            let weight:Double! = Double(textfield_weight.text!)
-            let height:Double! = Double(textfield_height.text!)
-            let BMI:Double! = weight/((height/100)*(height/100))
-            let message:String = checkCategory(BMI: BMI)
-            label_BMIResult.text = String(format:"%.2f",BMI)
-            label_BMImessage.text = message
+            BMI = weight/((height/100)*(height/100))
         }else{
-            let weight:Double! = Double(textfield_weight.text!)
-            let height:Double! = Double(textfield_height.text!)
-            let BMI:Double! = (weight*703)/(height*height)
-            let message:String = checkCategory(BMI: BMI)
-            label_BMIResult.text = String(format:"%.2f",BMI)
-            label_BMImessage.text = message
+            BMI = (weight*703)/(height*height)
         }
+        message = checkCategory(BMI: BMI)
+        var formatBMI = String(format:"%.2f",BMI)
+        label_BMIResult.text = formatBMI
+        label_BMImessage.text = message
+
+        let now = Date()
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let dateString = formatter.string(from: now)
+        
+        let weight_str:String = String(weight)
+        let height_str:String = String(height)
+        let BMI_str = String(BMI)
+        
+        arr = defaults.object(forKey: "arrayList") as? [[String:String]] ?? [[String:String]]()
+        var dict = [String:String]()
+        dict["height"] = height_str
+        dict["weight"] = weight_str
+        dict["date"] = dateString
+        dict["BMI"] = formatBMI
+        if textfield_name.text != ""{
+            dict["name"] = textfield_name.text
+        }else{
+            dict["name"] = ""
+        }
+        if textfield_age.text != ""{
+            dict["age"] = textfield_age.text
+        }else{
+            dict["age"] = ""
+        }
+        arr.append(dict)
+        print("arr.count is: \(arr.count)")
+        defaults.set(arr,forKey:"arrayList")
     }
     
     func checkCategory(BMI:Double)->String{
@@ -104,6 +141,11 @@ class ViewController: UIViewController {
             return "Obese Class III"
         }
     }
+    
+//    @IBAction func button_history_pressed(_ sender: UIButton) {
+//        let vc = storyboard?.instantiateViewController(identifier: "tablelist") as! TableViewController
+//        present(vc,animated: true)
+//    }
     
 }
 
