@@ -81,7 +81,9 @@ class UpdateViewController: UIViewController {
         arr[selectedItem]["category"] = category
         arr[selectedItem]["BMI"] = formatBMI
         UserDefaults.standard.set(arr,forKey:"arrayList")
-        self.dismiss(animated: true, completion: nil)
+        let vc = storyboard?.instantiateViewController(identifier: "tableScreen") as! TableViewController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true,completion: nil)
     }
     
     func checkCategory(BMI:Double)->String{
@@ -108,7 +110,7 @@ class UpdateViewController: UIViewController {
         arr.remove(at: selectedItem)
         UserDefaults.standard.set(arr,forKey:"arrayList")
         let vc = storyboard?.instantiateViewController(identifier: "tableScreen") as! TableViewController
-        let nc = UINavigationController(rootViewController: vc)
-        present(nc, animated: true,completion: nil)
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true,completion: nil)
     }
 }

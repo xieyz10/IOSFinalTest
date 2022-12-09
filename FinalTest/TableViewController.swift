@@ -50,4 +50,10 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         present(nc, animated: true,completion: nil)
     }
     
+    
+    @IBAction func button_cancel_pressed(_ sender: UIButton) {
+        let vc = storyboard?.instantiateViewController(identifier: "homeScreen") as! ViewController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc,animated: true)
+    }
 }

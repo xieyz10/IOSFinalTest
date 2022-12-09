@@ -153,10 +153,11 @@ class ViewController: UIViewController {
         }
     }
     
-//    @IBAction func button_history_pressed(_ sender: UIButton) {
-//        let vc = storyboard?.instantiateViewController(identifier: "tablelist") as! TableViewController
-//        present(vc,animated: true)
-//    }
+    @IBAction func button_history_pressed(_ sender: UIButton) {
+        let vc = storyboard?.instantiateViewController(identifier: "tableScreen") as! TableViewController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc,animated: true)
+    }
     
 }
 

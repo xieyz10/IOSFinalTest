@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FinalTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="FinalTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,7 +188,7 @@
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="dHy-xf-A4T" kind="show" id="BaN-gI-t6b"/>
+                                                    <action selector="button_history_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iOK-h0-ykH"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -321,7 +321,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="button_history" destination="KUW-9P-dxq" id="rF5-Fe-dwi"/>
                         <outlet property="button_imperial" destination="KYu-Qs-cGv" id="j3i-sc-DxJ"/>
                         <outlet property="button_metric" destination="hqS-8C-5u3" id="rOW-9s-TRU"/>
                         <outlet property="label_BMIResult" destination="3jx-vT-4kv" id="UDK-nq-FR6"/>
@@ -342,11 +341,11 @@
             <objects>
                 <viewController storyboardIdentifier="tableScreen" id="dHy-xf-A4T" customClass="TableViewController" customModule="FinalTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cld-sB-iaQ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IAz-DU-Aio">
-                                <rect key="frame" x="0.0" y="59" width="393" height="724"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="639"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="102" id="vPc-1C-XYA" customClass="TableViewCell" customModule="FinalTest" customModuleProvider="target">
@@ -438,14 +437,33 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwc-eG-MhP">
+                                <rect key="frame" x="0.0" y="706" width="393" height="63"/>
+                                <color key="backgroundColor" red="0.96437543630599976" green="0.059862948954105377" blue="0.25556090474128723" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="oUE-z2-3cN"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Cancel">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="33"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="button_cancel_pressed:" destination="dHy-xf-A4T" eventType="touchUpInside" id="SbP-cw-Dkp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8EQ-9E-LBZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="IAz-DU-Aio" firstAttribute="centerX" secondItem="cld-sB-iaQ" secondAttribute="centerX" id="5tY-ed-37y"/>
                             <constraint firstItem="IAz-DU-Aio" firstAttribute="leading" secondItem="8EQ-9E-LBZ" secondAttribute="leading" id="8Jf-cI-xcu"/>
-                            <constraint firstItem="IAz-DU-Aio" firstAttribute="bottom" secondItem="8EQ-9E-LBZ" secondAttribute="bottom" id="JKu-Bk-La8"/>
+                            <constraint firstItem="IAz-DU-Aio" firstAttribute="bottom" secondItem="8EQ-9E-LBZ" secondAttribute="bottom" constant="-120" id="JKu-Bk-La8"/>
+                            <constraint firstItem="uwc-eG-MhP" firstAttribute="bottom" secondItem="8EQ-9E-LBZ" secondAttribute="bottom" constant="-49" id="fhW-ua-nSj"/>
                             <constraint firstItem="IAz-DU-Aio" firstAttribute="top" secondItem="8EQ-9E-LBZ" secondAttribute="top" id="jEv-c0-9m5"/>
+                            <constraint firstItem="uwc-eG-MhP" firstAttribute="leading" secondItem="IAz-DU-Aio" secondAttribute="leading" id="lrZ-Om-LR7"/>
+                            <constraint firstItem="uwc-eG-MhP" firstAttribute="trailing" secondItem="IAz-DU-Aio" secondAttribute="trailing" id="m4J-Xg-OnQ"/>
+                            <constraint firstItem="uwc-eG-MhP" firstAttribute="top" secondItem="IAz-DU-Aio" secondAttribute="bottom" constant="8" id="wPd-Ea-bfk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fSU-Wm-g7N"/>
@@ -455,7 +473,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cix-jF-21U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="460" y="-27"/>
+            <point key="canvasLocation" x="458.77862595419845" y="-27.464788732394368"/>
         </scene>
         <!--Update View Controller-->
         <scene sceneID="XF2-18-VYI">
