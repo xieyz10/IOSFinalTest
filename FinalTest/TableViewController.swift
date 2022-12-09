@@ -34,7 +34,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if list["measurement"] == "metric"{
             cell!.label_weight.text = (list["weight"] ?? "") + " Kg"
         }else{
-            cell!.label_weight.text = (list["weight"] ?? "") + " Pounds"
+            cell!.label_weight.text = (list["weight"] ?? "") + " Lb"
         }
         cell!.label_date.text = list["date"]
         cell?.button_edit.tag = indexPath.row

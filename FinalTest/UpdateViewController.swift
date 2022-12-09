@@ -18,6 +18,7 @@ class UpdateViewController: UIViewController {
     @IBOutlet weak var label_BMI: UILabel!
     var arr = [[String:String]]()
     var selectedItem = 0
+    let examineArray:[Character] = ["1","2","3","4","5","6","7","8","9","0","."]
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -42,13 +43,24 @@ class UpdateViewController: UIViewController {
             textfield_weight.text = selectedItem["weight"]! + " Kg"
             textfield_height.text = selectedItem["height"]! + " Centimeters"
         }else{
-            textfield_weight.text = selectedItem["weight"]! + " Pounds"
+            textfield_weight.text = selectedItem["weight"]! + " Lb"
             textfield_height.text = selectedItem["height"]! + " Inches"
         }
     }
     
     @IBAction func button_update_pressed(_ sender: UIButton) {
+        var alert_empty = UIAlertController(title: "Wong Input Format", message: "Weight and height cannot be empty", preferredStyle: UIAlertController.Style.alert)
+        alert_empty.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        
+        var alert_numberOnly = UIAlertController(title: "Wong Input Format", message: "Number Only!", preferredStyle: UIAlertController.Style.alert)
+        alert_numberOnly.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        
         if textfield_weight.text == "" || textfield_height.text == ""{
+            self.present(alert_empty, animated: true, completion: nil)
+            return
+        }
+        if !checkStr(str:textfield_weight.text!) || !checkStr(str:textfield_height.text!){
+            self.present(alert_numberOnly, animated: true, completion: nil)
             return
         }
         let item = arr[selectedItem]
@@ -86,6 +98,15 @@ class UpdateViewController: UIViewController {
         present(vc, animated: true,completion: nil)
     }
     
+    func checkStr(str:String)->Bool{
+        for char in str {
+            if !examineArray.contains(char){
+                return false
+            }
+        }
+        return true
+    }
+    
     func checkCategory(BMI:Double)->String{
         if BMI<16{
             return "Severe Thinness"
@@ -109,8 +130,14 @@ class UpdateViewController: UIViewController {
     @IBAction func button_delete_pressed(_ sender: UIButton) {
         arr.remove(at: selectedItem)
         UserDefaults.standard.set(arr,forKey:"arrayList")
-        let vc = storyboard?.instantiateViewController(identifier: "tableScreen") as! TableViewController
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true,completion: nil)
+        if(arr.count != 0){
+            let vc = storyboard?.instantiateViewController(identifier: "tableScreen") as! TableViewController
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true,completion: nil)
+        }else{
+            let vc = storyboard?.instantiateViewController(identifier: "homeScreen") as! ViewController
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true,completion: nil)
+        }
     }
 }

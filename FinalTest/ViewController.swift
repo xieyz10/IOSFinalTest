@@ -18,12 +18,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var label_BMIResult: UILabel!
     @IBOutlet weak var button_metric: UIButton!
     @IBOutlet weak var button_imperial: UIButton!
-    @IBOutlet weak var button_history: UIButton!
     
     let defaults = UserDefaults.standard
     var arr = [[String:String]]()
     var currentMeasurement:String = "metric"
-    
+    let examineArray:[Character] = ["1","2","3","4","5","6","7","8","9","0","."]
     override func viewDidLoad() {
         super.viewDidLoad()
         currentMeasurement = "metric"
@@ -42,11 +41,9 @@ class ViewController: UIViewController {
         textfield_height.placeholder = "example: 178 cm (number only)"
         button_metric.backgroundColor = UIColor.blue
         button_imperial.backgroundColor = UIColor.white
-        button_history.backgroundColor = UIColor.white
         
         button_metric.tintColor = UIColor.white
         button_imperial.tintColor = UIColor.blue
-        button_history.tintColor = UIColor.blue
     }
     
     @IBAction func button_imperial_pressed(_ sender: UIButton) {
@@ -55,25 +52,32 @@ class ViewController: UIViewController {
         textfield_height.placeholder = "example:x.x inches (number only)"
         button_metric.backgroundColor = UIColor.white
         button_imperial.backgroundColor = UIColor.blue
-        button_history.backgroundColor = UIColor.white
         
         button_metric.tintColor = UIColor.blue
         button_imperial.tintColor = UIColor.white
-        button_history.tintColor = UIColor.blue
     }
     
     @IBAction func button_tracking_pressed(_ sender: UIButton) {
         button_metric.backgroundColor = UIColor.white
         button_imperial.backgroundColor = UIColor.white
-        button_history.backgroundColor = UIColor.blue
         
         button_metric.tintColor = UIColor.blue
         button_imperial.tintColor = UIColor.blue
-        button_history.tintColor = UIColor.white
     }
     
     @IBAction func button_submit_pressed(_ sender: UIButton) {
+        var alert_empty = UIAlertController(title: "Wong Input Format", message: "Weight and height cannot be empty", preferredStyle: UIAlertController.Style.alert)
+        alert_empty.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        
+        var alert_numberOnly = UIAlertController(title: "Wong Input Format", message: "Number Only!", preferredStyle: UIAlertController.Style.alert)
+        alert_numberOnly.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        
         if textfield_weight.text == "" || textfield_height.text == ""{
+            self.present(alert_empty, animated: true, completion: nil)
+            return
+        }
+        if !checkStr(str:textfield_weight.text!) || !checkStr(str:textfield_height.text!){
+            self.present(alert_numberOnly, animated: true, completion: nil)
             return
         }
         var weight:Double! = 0.0
@@ -88,7 +92,7 @@ class ViewController: UIViewController {
             BMI = (weight*703)/(height*height)
         }
         message = checkCategory(BMI: BMI)
-        var formatBMI = String(format:"%.2f",BMI)
+        let formatBMI = String(format:"%.2f",BMI)
         label_BMIResult.text = formatBMI
         label_BMImessage.text = message
 
@@ -128,9 +132,19 @@ class ViewController: UIViewController {
         }else{
             dict["measurement"] = "imperial"
         }
+        dict["category"] = label_BMImessage.text
         arr.append(dict)
         print("arr.count is: \(arr.count)")
         defaults.set(arr,forKey:"arrayList")
+    }
+    
+    func checkStr(str:String)->Bool{
+        for char in str {
+            if !examineArray.contains(char){
+                return false
+            }
+        }
+        return true
     }
     
     func checkCategory(BMI:Double)->String{

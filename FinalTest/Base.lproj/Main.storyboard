@@ -188,7 +188,7 @@
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="button_history_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iOK-h0-ykH"/>
+                                                    <action selector="button_history_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S10-eC-bZH"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -355,9 +355,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mt-8Y-ozl">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mt-8Y-ozl">
                                                     <rect key="frame" x="20" y="11" width="262" height="36"/>
-                                                    <color key="backgroundColor" red="0.97569447755813599" green="0.9251251220703125" blue="0.92110216617584229" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="262" id="bLr-uZ-o6f"/>
                                                     </constraints>
@@ -365,27 +365,27 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120 pounds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFR-97-jiq">
-                                                    <rect key="frame" x="75" y="55" width="112" height="36"/>
-                                                    <color key="backgroundColor" red="0.95287448167800903" green="0.86946481466293335" blue="0.81168645620346069" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120 Lb" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFR-97-jiq">
+                                                    <rect key="frame" x="75" y="53" width="67" height="36"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="112" id="0la-ge-ZN6"/>
+                                                        <constraint firstAttribute="width" constant="67" id="0la-ge-ZN6"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="BMI:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3y-Jt-RZV">
-                                                    <rect key="frame" x="188" y="55" width="41" height="36"/>
-                                                    <color key="backgroundColor" red="0.97569447755813599" green="0.9251251220703125" blue="0.92110216617584229" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="150" y="53" width="41" height="36"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mih-lG-2LN">
-                                                    <rect key="frame" x="20" y="55" width="54" height="35.333333333333343"/>
-                                                    <color key="backgroundColor" red="0.34426390369999998" green="0.95282715559999998" blue="0.37887556280000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mih-lG-2LN">
+                                                    <rect key="frame" x="20" y="52" width="54" height="39"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -396,36 +396,36 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Edit"/>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91Y-pb-S6y">
-                                                    <rect key="frame" x="229" y="55" width="53" height="35.333333333333343"/>
-                                                    <color key="backgroundColor" red="0.95282715559999998" green="0.55449221130000004" blue="0.78069011730000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18.5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91Y-pb-S6y">
+                                                    <rect key="frame" x="199" y="52" width="53" height="39"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ql1-Qe-DWc" firstAttribute="leading" secondItem="91Y-pb-S6y" secondAttribute="trailing" constant="8" symbolic="YES" id="2PL-pi-P2i"/>
-                                                <constraint firstItem="g3y-Jt-RZV" firstAttribute="firstBaseline" secondItem="91Y-pb-S6y" secondAttribute="firstBaseline" constant="4" id="4wf-Xp-KQL"/>
+                                                <constraint firstItem="ql1-Qe-DWc" firstAttribute="leading" secondItem="91Y-pb-S6y" secondAttribute="trailing" constant="38" id="2PL-pi-P2i"/>
+                                                <constraint firstItem="g3y-Jt-RZV" firstAttribute="firstBaseline" secondItem="91Y-pb-S6y" secondAttribute="firstBaseline" constant="2" id="4wf-Xp-KQL"/>
                                                 <constraint firstItem="ql1-Qe-DWc" firstAttribute="trailing" secondItem="Yt7-qV-Fni" secondAttribute="trailingMargin" id="9uc-ey-n1t"/>
                                                 <constraint firstItem="ql1-Qe-DWc" firstAttribute="top" secondItem="Yt7-qV-Fni" secondAttribute="topMargin" constant="23" id="FSu-RA-q9B"/>
-                                                <constraint firstItem="91Y-pb-S6y" firstAttribute="leading" secondItem="g3y-Jt-RZV" secondAttribute="trailing" id="IkL-Gh-zG3"/>
-                                                <constraint firstItem="Mih-lG-2LN" firstAttribute="baseline" secondItem="FFR-97-jiq" secondAttribute="baseline" id="JJV-oi-8VG"/>
+                                                <constraint firstItem="91Y-pb-S6y" firstAttribute="leading" secondItem="g3y-Jt-RZV" secondAttribute="trailing" constant="8" id="IkL-Gh-zG3"/>
+                                                <constraint firstItem="Mih-lG-2LN" firstAttribute="baseline" secondItem="FFR-97-jiq" secondAttribute="baseline" constant="2" id="JJV-oi-8VG"/>
                                                 <constraint firstItem="9Mt-8Y-ozl" firstAttribute="top" secondItem="Yt7-qV-Fni" secondAttribute="topMargin" id="JXZ-oz-VBW"/>
-                                                <constraint firstItem="91Y-pb-S6y" firstAttribute="firstBaseline" secondItem="FFR-97-jiq" secondAttribute="firstBaseline" constant="-4" id="PiV-P9-sfc"/>
+                                                <constraint firstItem="91Y-pb-S6y" firstAttribute="firstBaseline" secondItem="FFR-97-jiq" secondAttribute="firstBaseline" constant="-2" id="PiV-P9-sfc"/>
                                                 <constraint firstItem="Mih-lG-2LN" firstAttribute="leading" secondItem="9Mt-8Y-ozl" secondAttribute="leading" id="SCn-nq-yXr"/>
-                                                <constraint firstItem="FFR-97-jiq" firstAttribute="top" secondItem="9Mt-8Y-ozl" secondAttribute="bottom" constant="8" id="Ype-sD-ci7"/>
-                                                <constraint firstItem="91Y-pb-S6y" firstAttribute="trailing" secondItem="9Mt-8Y-ozl" secondAttribute="trailing" id="d8s-Kv-gJ7"/>
+                                                <constraint firstItem="FFR-97-jiq" firstAttribute="top" secondItem="9Mt-8Y-ozl" secondAttribute="bottom" constant="6" id="Ype-sD-ci7"/>
+                                                <constraint firstItem="91Y-pb-S6y" firstAttribute="trailing" secondItem="9Mt-8Y-ozl" secondAttribute="trailing" constant="-30" id="d8s-Kv-gJ7"/>
                                                 <constraint firstItem="FFR-97-jiq" firstAttribute="leading" secondItem="9Mt-8Y-ozl" secondAttribute="leading" constant="55" id="e30-IV-7Kj"/>
-                                                <constraint firstItem="91Y-pb-S6y" firstAttribute="leading" secondItem="FFR-97-jiq" secondAttribute="trailing" constant="42" id="ezI-b5-4mz"/>
-                                                <constraint firstItem="91Y-pb-S6y" firstAttribute="baseline" secondItem="FFR-97-jiq" secondAttribute="baseline" id="gou-T8-zgX"/>
+                                                <constraint firstItem="91Y-pb-S6y" firstAttribute="leading" secondItem="FFR-97-jiq" secondAttribute="trailing" constant="57" id="ezI-b5-4mz"/>
+                                                <constraint firstItem="91Y-pb-S6y" firstAttribute="baseline" secondItem="FFR-97-jiq" secondAttribute="baseline" constant="2" id="gou-T8-zgX"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="9Mt-8Y-ozl" secondAttribute="bottom" constant="44" id="iAf-5u-kTA"/>
                                                 <constraint firstItem="9Mt-8Y-ozl" firstAttribute="leading" secondItem="Yt7-qV-Fni" secondAttribute="leadingMargin" id="idl-Wq-WyX"/>
                                                 <constraint firstItem="FFR-97-jiq" firstAttribute="leading" secondItem="Mih-lG-2LN" secondAttribute="trailing" constant="1" id="jYW-6p-J1O"/>
-                                                <constraint firstItem="FFR-97-jiq" firstAttribute="bottom" secondItem="Yt7-qV-Fni" secondAttribute="bottomMargin" id="k1l-Xm-aoI"/>
+                                                <constraint firstItem="FFR-97-jiq" firstAttribute="bottom" secondItem="Yt7-qV-Fni" secondAttribute="bottomMargin" constant="-2" id="k1l-Xm-aoI"/>
                                                 <constraint firstItem="ql1-Qe-DWc" firstAttribute="centerY" secondItem="Yt7-qV-Fni" secondAttribute="centerY" id="kAP-an-DOZ"/>
-                                                <constraint firstItem="Mih-lG-2LN" firstAttribute="firstBaseline" secondItem="FFR-97-jiq" secondAttribute="firstBaseline" constant="-4" id="l3u-KD-l56"/>
-                                                <constraint firstItem="g3y-Jt-RZV" firstAttribute="baseline" secondItem="91Y-pb-S6y" secondAttribute="baseline" id="vkI-ag-i3f"/>
+                                                <constraint firstItem="Mih-lG-2LN" firstAttribute="firstBaseline" secondItem="FFR-97-jiq" secondAttribute="firstBaseline" constant="-2" id="l3u-KD-l56"/>
+                                                <constraint firstItem="g3y-Jt-RZV" firstAttribute="baseline" secondItem="91Y-pb-S6y" secondAttribute="baseline" constant="-2" id="vkI-ag-i3f"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
