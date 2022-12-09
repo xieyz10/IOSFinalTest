@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var textfield_age: UITextField!
     @IBOutlet weak var textfield_weight: UITextField!
     @IBOutlet weak var textfield_height: UITextField!
+    @IBOutlet weak var textfield_gender: UITextField!
     @IBOutlet weak var label_BMImessage: UILabel!
     @IBOutlet weak var label_BMIResult: UILabel!
     @IBOutlet weak var button_metric: UIButton!
@@ -116,6 +117,16 @@ class ViewController: UIViewController {
             dict["age"] = textfield_age.text
         }else{
             dict["age"] = ""
+        }
+        if textfield_gender.text != ""{
+            dict["gender"] = textfield_gender.text
+        }else{
+            dict["gender"] = ""
+        }
+        if currentMeasurement == "metric"{
+            dict["measurement"] = "metric"
+        }else{
+            dict["measurement"] = "imperial"
         }
         arr.append(dict)
         print("arr.count is: \(arr.count)")

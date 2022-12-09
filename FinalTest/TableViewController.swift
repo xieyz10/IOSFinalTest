@@ -8,13 +8,13 @@
 import UIKit
 
 class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableList: UITableView!
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableList.delegate = self
+        tableList.dataSource = self
         print("iin???s")
         // Do any additional setup after loading the view.
     }
@@ -28,14 +28,26 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var arrayList = defaults.object(forKey: "arrayList") as? [[String:String]] ?? [[String:String]]()
         let list =  arrayList[indexPath.row]
-        let cell =  tableView.dequeueReusableCell(withIdentifier: "cell",for:indexPath) as? TableViewCell
+        let cell =  tableList.dequeueReusableCell(withIdentifier: "cell",for:indexPath) as? TableViewCell
         
         cell!.label_BMI.text = list["BMI"]
-        cell!.label_weight.text = list["weight"]
+        if list["measurement"] == "metric"{
+            cell!.label_weight.text = (list["weight"] ?? "") + " Kg"
+        }else{
+            cell!.label_weight.text = (list["weight"] ?? "") + " Pounds"
+        }
         cell!.label_date.text = list["date"]
-       
+        cell?.button_edit.tag = indexPath.row
+        cell!.button_edit.addTarget(self, action: #selector(updateScreen(sender:)), for: .touchUpInside)
         return cell!
     }
     
+    @objc func updateScreen(sender: UIButton){
+        print("sender.tag is: \(sender.tag)")
+        let vc = storyboard?.instantiateViewController(identifier: "updateScreen") as! UpdateViewController
+        let nc = UINavigationController(rootViewController: vc)
+        vc.selectedItem = sender.tag
+        present(nc, animated: true,completion: nil)
+    }
     
 }
