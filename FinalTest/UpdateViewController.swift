@@ -29,6 +29,7 @@ class UpdateViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
+    //init user info
     func initDetails(){
         arr =  UserDefaults.standard.object(forKey: "arrayList") as? [[String:String]] ?? [[String:String]]()
         let selectedItem = arr[selectedItem]
@@ -48,6 +49,7 @@ class UpdateViewController: UIViewController {
         }
     }
     
+    //update button click function
     @IBAction func button_update_pressed(_ sender: UIButton) {
         var alert_empty = UIAlertController(title: "Wong Input Format", message: "Weight and height cannot be empty", preferredStyle: UIAlertController.Style.alert)
         alert_empty.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
@@ -98,6 +100,7 @@ class UpdateViewController: UIViewController {
         present(vc, animated: true,completion: nil)
     }
     
+    //check if input string contains characters other than 0-9 and .
     func checkStr(str:String)->Bool{
         for char in str {
             if !examineArray.contains(char){
@@ -107,6 +110,7 @@ class UpdateViewController: UIViewController {
         return true
     }
     
+    //check categary
     func checkCategory(BMI:Double)->String{
         if BMI<16{
             return "Severe Thinness"
@@ -127,6 +131,7 @@ class UpdateViewController: UIViewController {
         }
     }
     
+    //delete button click function
     @IBAction func button_delete_pressed(_ sender: UIButton) {
         arr.remove(at: selectedItem)
         UserDefaults.standard.set(arr,forKey:"arrayList")

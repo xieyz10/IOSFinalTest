@@ -3,6 +3,9 @@
 //  FinalTest
 //
 //  Created by Mingyuan Xie on 12/8/22.
+//  version 1.0 first commit 12/09/2022
+//  version 1.1 add functionalities 12/10/2022
+//  version 1.2 fix layout issue 12/11/2022
 //
 
 import UIKit
@@ -58,15 +61,6 @@ class ViewController: UIViewController {
         button_metric.tintColor = UIColor.blue
         button_imperial.tintColor = UIColor.white
     }
-    
-//    //tracking button click function
-//    @IBAction func button_tracking_pressed(_ sender: UIButton) {
-//        button_metric.backgroundColor = UIColor.white
-//        button_imperial.backgroundColor = UIColor.white
-//
-//        button_metric.tintColor = UIColor.blue
-//        button_imperial.tintColor = UIColor.blue
-//    }
     
     //submit button click function
     @IBAction func button_submit_pressed(_ sender: UIButton) {
