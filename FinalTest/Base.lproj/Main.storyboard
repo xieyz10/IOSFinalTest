@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dAq-Mn-LTH">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -9,6 +9,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Splash Screen View Controller-->
+        <scene sceneID="KwF-8S-arF">
+            <objects>
+                <viewController id="dAq-Mn-LTH" customClass="SplashScreenViewController" customModule="FinalTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RLs-id-ixa">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.fill.badge.questionmark.ar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="N15-93-sGb">
+                                <rect key="frame" x="76" y="362" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="twn-6L-0jt"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <constraints>
+                            <constraint firstItem="N15-93-sGb" firstAttribute="centerX" secondItem="RLs-id-ixa" secondAttribute="centerX" id="303-bR-ORf"/>
+                            <constraint firstItem="N15-93-sGb" firstAttribute="centerY" secondItem="RLs-id-ixa" secondAttribute="centerY" id="g1D-V2-r1q"/>
+                            <constraint firstItem="N15-93-sGb" firstAttribute="leading" secondItem="twn-6L-0jt" secondAttribute="leading" constant="77.666666666666671" id="ruV-cY-BIj"/>
+                            <constraint firstItem="N15-93-sGb" firstAttribute="top" secondItem="twn-6L-0jt" secondAttribute="top" constant="302.33333333333331" id="u5c-G4-Ten"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="openModal" modalPresentationStyle="fullScreen" id="NoZ-HV-43P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i1Q-aT-O2h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-946" y="-27"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -159,33 +188,45 @@
                                         <rect key="frame" x="8" y="630" width="377" height="68"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqS-8C-5u3">
-                                                <rect key="frame" x="0.0" y="0.0" width="125.66666666666667" height="68"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="94.333333333333329" height="68"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Metric">
-                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
+                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="button_metric_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kkx-Py-i0e"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYu-Qs-cGv">
-                                                <rect key="frame" x="125.66666666666666" y="0.0" width="125.66666666666666" height="68"/>
+                                                <rect key="frame" x="94.333333333333343" y="0.0" width="94.333333333333343" height="68"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Imperial">
-                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
+                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="button_imperial_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f8P-aK-TzF"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fp-rD-DDu">
+                                                <rect key="frame" x="188.66666666666666" y="0.0" width="93.999999999999972" height="68"/>
+                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                <color key="tintColor" systemColor="tintColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Reset">
+                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="button_update_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uco-HA-4YG"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUW-9P-dxq">
-                                                <rect key="frame" x="251.33333333333329" y="0.0" width="125.66666666666666" height="68"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="282.66666666666669" y="0.0" width="94.333333333333314" height="68"/>
+                                                <color key="backgroundColor" red="0.61237221956253052" green="0.90741020441055298" blue="0.47235244512557983" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="History">
-                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
+                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="button_history_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S10-eC-bZH"/>
@@ -776,6 +817,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="person.crop.circle.fill.badge.questionmark.ar" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -784,6 +826,9 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

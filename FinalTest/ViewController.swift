@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         }
     }
 
+    //metric button click function
     @IBAction func button_metric_pressed(_ sender: UIButton) {
         currentMeasurement = "metric"
         textfield_weight.placeholder = "example: 60 kilograms (number only)"
@@ -46,6 +47,7 @@ class ViewController: UIViewController {
         button_imperial.tintColor = UIColor.blue
     }
     
+    //imperial button click function
     @IBAction func button_imperial_pressed(_ sender: UIButton) {
         currentMeasurement = "imeprial"
         textfield_weight.placeholder = "example: 120 pounds (number only)"
@@ -57,14 +59,16 @@ class ViewController: UIViewController {
         button_imperial.tintColor = UIColor.white
     }
     
-    @IBAction func button_tracking_pressed(_ sender: UIButton) {
-        button_metric.backgroundColor = UIColor.white
-        button_imperial.backgroundColor = UIColor.white
-        
-        button_metric.tintColor = UIColor.blue
-        button_imperial.tintColor = UIColor.blue
-    }
+//    //tracking button click function
+//    @IBAction func button_tracking_pressed(_ sender: UIButton) {
+//        button_metric.backgroundColor = UIColor.white
+//        button_imperial.backgroundColor = UIColor.white
+//
+//        button_metric.tintColor = UIColor.blue
+//        button_imperial.tintColor = UIColor.blue
+//    }
     
+    //submit button click function
     @IBAction func button_submit_pressed(_ sender: UIButton) {
         var alert_empty = UIAlertController(title: "Wong Input Format", message: "Weight and height cannot be empty", preferredStyle: UIAlertController.Style.alert)
         alert_empty.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
@@ -138,6 +142,7 @@ class ViewController: UIViewController {
         defaults.set(arr,forKey:"arrayList")
     }
     
+    //check if input content includes characters other than 0-9 and .
     func checkStr(str:String)->Bool{
         for char in str {
             if !examineArray.contains(char){
@@ -147,6 +152,7 @@ class ViewController: UIViewController {
         return true
     }
     
+    //check caregary of BMI
     func checkCategory(BMI:Double)->String{
         if BMI<16{
             return "Severe Thinness"
@@ -167,10 +173,22 @@ class ViewController: UIViewController {
         }
     }
     
+    //history button clicked
     @IBAction func button_history_pressed(_ sender: UIButton) {
         let vc = storyboard?.instantiateViewController(identifier: "tableScreen") as! TableViewController
         vc.modalPresentationStyle = .fullScreen
         present(vc,animated: true)
+    }
+    
+    
+    @IBAction func button_update_pressed(_ sender: UIButton) {
+        textfield_name.text = ""
+        textfield_age.text = ""
+        textfield_gender.text = ""
+        textfield_height.text = ""
+        textfield_weight.text = ""
+        label_BMImessage.text = "Currently No Category"
+        label_BMIResult.text = "0.0"
     }
     
 }

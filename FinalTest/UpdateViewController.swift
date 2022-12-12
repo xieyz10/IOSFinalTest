@@ -39,7 +39,7 @@ class UpdateViewController: UIViewController {
         label_category.text = selectedItem["category"]
         label_BMI.text = selectedItem["BMI"]
         
-        if measurement == "metrix"{
+        if measurement == "metric"{
             textfield_weight.text = selectedItem["weight"]! + " Kg"
             textfield_height.text = selectedItem["height"]! + " Centimeters"
         }else{
