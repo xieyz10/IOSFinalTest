@@ -93,6 +93,7 @@ class UpdateViewController: UIViewController {
         arr[selectedItem]["weight"] = weight
         arr[selectedItem]["height"] = height
         arr[selectedItem]["category"] = category
+        arr[selectedItem]["gender"] = gender
         arr[selectedItem]["BMI"] = formatBMI
         UserDefaults.standard.set(arr,forKey:"arrayList")
         let vc = storyboard?.instantiateViewController(identifier: "tableScreen") as! TableViewController
