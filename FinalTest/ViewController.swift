@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  FinalTest
 //
-//  Created by Mingyuan Xie on 12/8/22.
+//  Created by Mingyuan Xie on 12/8/22. studentID: 301275467
 //  version 1.0 first commit 12/09/2022
 //  version 1.1 add functionalities 12/10/2022
 //  version 1.2 fix layout issue 12/11/2022
